@@ -23,16 +23,11 @@ def flight_plan(keepGoing):
 
     print("in flight plan")
     print("sleeping")
-    bebop.smart_sleep(5)
-    print("sleeping")
-    bebop.smart_sleep(5)
-    print("sleeping")
-    bebop.smart_sleep(5)
-    print("sleeping")
-    bebop.smart_sleep(5)
-    print("sleeping")
-    bebop.smart_sleep(5)
+    bebop.smart_sleep(3)
+    bebop.safe_takeoff(10)
+    bebop.smart_sleep(10)
     
+    print("Landing")
     bebop.safe_land(10)
     
     keepGoing.value = 0
