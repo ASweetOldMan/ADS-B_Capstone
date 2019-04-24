@@ -45,22 +45,22 @@ print("HomeChanged_latitude: " + str(bebop.sensors.sensors_dict["HomeChanged_lat
 print("HomeChanged_altitude: " + str(bebop.sensors.sensors_dict["HomeChanged_altitude"]))
 
 
+#bebop.smart_sleep(5)
+
+
+bebop.safe_takeoff(10)
 bebop.smart_sleep(5)
 
+bebop.move_relative(0, 0, -2, 0)  #move_relative(self, dx, dy, dz, dradians)
+print("First Move Done")
 
-#bebop.safe_takeoff(10)
-#bebop.smart_sleep(5)
-#
-#bebop.move_relative(0, 0, -1, 0)  #move_relative(self, dx, dy, dz, dradians)
-#print("First Move Done")
-#
-#bebop.smart_sleep(1)
-#
-#print("flip left")
-#print("flying state is %s" % bebop.sensors.flying_state)
-#success = bebop.flip(direction="left")
-#print("mambo flip result %s" % success)
-#bebop.smart_sleep(2)
+bebop.smart_sleep(1)
+
+print("flip left")
+print("flying state is %s" % bebop.sensors.flying_state)
+success = bebop.flip(direction="left")
+print("mambo flip result %s" % success)
+bebop.smart_sleep(2)
 
 
 #bebop.move_relative(0, 0, 0, 6.28)
@@ -84,8 +84,8 @@ bebop.smart_sleep(5)
 #print("mambo flip result %s" % success)
 #bebop.smart_sleep(5)
 
-#bebop.smart_sleep(5)
-#bebop.safe_land(10)
+bebop.smart_sleep(5)
+bebop.safe_land(10)
 
 print("DONE - disconnecting")
 bebop.disconnect()
